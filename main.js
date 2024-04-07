@@ -1,55 +1,39 @@
-"use strict";
-//Day 28...
-//Question No 82...
-function stringLength(str) {
-    return str.length;
-    //Returns the number of characters in String 
+//Day 31..
+//Question No 91...
+var favoriteFruits = ["Apple", "Banana", "Cherry"];
+favoriteFruits.push("Mango");
+console.log(favoriteFruits);
+//Question No 92..
+function removeLastElement(arr) {
+    return arr.pop();
 }
-console.log(stringLength("Alice"));
-//Question No 83...
-function convertCase(str) {
-    let upperStr = str.toUpperCase();
-    let lowerStr = str.toLowerCase();
-    console.log("Uppercase :", upperStr, "LowerCase :", lowerStr);
+//Removes and returns the last element of the array..
+var fruits = ["Apple", "Banana", "Cherry"];
+console.log(removeLastElement(fruits));
+console.log(fruits);
+//Question No 93...
+function replaceBananaWithMango(fruits) {
+    var index = fruits.indexOf("Banana");
+    if (index == -1)
+        fruits[index] = "Mango";
 }
-convertCase("Hello World");
-// Question No 84...
-function replaceJavaScriptWithTypeScript(sentence) {
-    return sentence.replace(/JavaScript/g, "TypeScript");
+var fruits1 = ["Apple", "Banana", "Cherry"];
+replaceBananaWithMango(fruits1);
+console.log(fruits1);
+//Day 32...
+//Question No 94...
+var words = ["Hello", "World", "TypeScript", "JavaScript"];
+var lengths = words.map(function (word) { return word.length; });
+console.log(lengths);
+//Question No 95...
+function filterGreaterThanTen(numbers) {
+    return numbers.filter(function (number) { return number > 10; });
 }
-console.log(replaceJavaScriptWithTypeScript("I Love JavaScript and JavaScript is Awesome !"));
-//Day 29...
-//Question No 85...
-function findCodePosition(str) {
-    return str.indexOf("code");
+var numbers = [5, 10, 15, 20, 25];
+console.log(filterGreaterThanTen(numbers));
+//Question No 96...
+function calculateSum(numbers) {
+    return numbers.reduce(function (accumulator, current) { return accumulator + current; }, 0);
 }
-console.log(findCodePosition("Learn to code with JavaScript"));
-//Question No 86...
-function hasJavaScript(str) {
-    return str.includes("JavaScript");
-}
-console.log(hasJavaScript("I Love coding in JavaScript! "));
-//Question No 87...
-function extractFirstTenChars(str) {
-    return str.substring(0, 10);
-}
-console.log(extractFirstTenChars("Hello, JavaScript world !"));
-//Day 30...
-//Question No 88...
-function roundToNearestInteger(num) {
-    return Math.round(num);
-}
-console.log(roundToNearestInteger(4.7));
-console.log(roundToNearestInteger(4.4));
-//Question No 89...
-function convertStringToNumber(str) {
-    return parseFloat(str);
-}
-console.log(convertStringToNumber("123.45"));
-console.log(convertStringToNumber("98"));
-//Question No 90...
-function isValueNaN(value) {
-    return isNaN(value);
-}
-console.log(isValueNaN("Hello"));
-console.log(isValueNaN(123));
+var numbers1 = [1, 2, 3, 4, 5];
+console.log(calculateSum(numbers1));

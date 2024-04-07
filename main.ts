@@ -1,83 +1,57 @@
-//Day 28...
-//Question No 82...
+//Day 31..
+//Question No 91...
+let favoriteFruits : string[] = ["Apple", "Banana", "Cherry"];
+favoriteFruits.push("Mango");
+console.log(favoriteFruits);
 
-function stringLength(str : string) : number {
-    return str .length ;
-    //Returns the number of characters in String 
+//Question No 92..
+function removeLastElement<T>(arr : T []): T | undefined {
+    return arr.pop();
+}
+//Removes and returns the last element of the array..
+const fruits : string [] = ["Apple", "Banana", "Cherry"];
+
+console.log(removeLastElement(fruits));
+console.log(fruits);
+
+//Question No 93...
+
+function replaceBananaWithMango(fruits:string[]): void {
+    const index =fruits.indexOf("Banana");
+    if(index ! == -1)
+    fruits[index] = "Mango";
 }
 
-console.log(stringLength("Alice"));
+const fruits1 : string [] = ["Apple", "Banana", "Cherry"];
+replaceBananaWithMango(fruits1);
 
-//Question No 83...
+console.log(fruits1);
 
-function convertCase(str : string){
-    let upperStr = str.toUpperCase();
+//Day 32...
+//Question No 94...
 
-    let lowerStr =str.toLowerCase();
+const words: string[] = ["Hello", "World", "TypeScript", "JavaScript"];
 
-    console.log("Uppercase :", upperStr , "LowerCase :",lowerStr);
-}
-convertCase("Hello World");
+const lengths : number [] = words.map(word => word.length);
 
- // Question No 84...
+console.log(lengths);
 
- function replaceJavaScriptWithTypeScript(sentence : string): string {
-    return sentence.replace(/JavaScript/g , "TypeScript");
- }
+//Question No 95...
+function filterGreaterThanTen(numbers: number[]): number[]{
+    return numbers.filter(number => number > 10);
 
- console.log(replaceJavaScriptWithTypeScript("I Love JavaScript and JavaScript is Awesome !"));
-
- //Day 29...
- //Question No 85...
-
- function findCodePosition(str : string): number {
-    return str.indexOf("code");
- }
-
- console.log(findCodePosition("Learn to code with JavaScript"));
-
- //Question No 86...
-
- function hasJavaScript(str : string): boolean {
-
-    return str.includes("JavaScript");
- }
-
- console.log(hasJavaScript("I Love coding in JavaScript! "));
-
- //Question No 87...
-
- function extractFirstTenChars(str : string): string {
-    return str.substring(0,10);
- }
-
- console.log(extractFirstTenChars("Hello, JavaScript world !"));
-
-//Day 30...
-//Question No 88...
-
-function roundToNearestInteger(num : number) : number{
-    return Math.round(num);
 }
 
-console.log(roundToNearestInteger(4.7));
+const numbers : number[] = [5, 10, 15, 20, 25];
 
-console.log(roundToNearestInteger(4.4));
+console.log(filterGreaterThanTen(numbers));
 
-//Question No 89...
-function convertStringToNumber(str : string): number{
-    return parseFloat(str);
+//Question No 96...
+
+function calculateSum(numbers : number[]):number{
+    return numbers.reduce((accumulator ,current) => accumulator + current, 0);
 }
-console.log(convertStringToNumber("123.45"));
 
-console.log(convertStringToNumber("98"));
+const numbers1 : number[] = [1,2,3,4,5];
 
-//Question No 90...
-
-function isValueNaN(value : any):boolean {
-    return isNaN(value);
-}
-console.log(isValueNaN("Hello"));
-
-console.log(isValueNaN(123));
-
+console.log(calculateSum(numbers1));
