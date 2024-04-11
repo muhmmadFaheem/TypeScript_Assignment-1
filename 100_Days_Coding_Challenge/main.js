@@ -1,147 +1,165 @@
 "use strict";
-//100 Days Coding Challenge..
-//Day 33..
-//Question No 97..
-function getCurrentDateFormatted() {
-    const now = new Date();
-    const day = String(now.getDate()).padStart(2, '0');
-    const month = String(now.getMonth() + 1).padStart(2, '0');
-    const year = now.getFullYear();
-    return day + " - " + month + " - " + year;
-}
-console.log(getCurrentDateFormatted());
-//Question No 98...
-function daysUnitNewYear() {
-    const today = new Date();
-    const newYear = new Date(today.getFullYear() + 1, 0, 1);
-    const diff = newYear.getTime() - today.getTime();
-    const days = Math.ceil(diff / 1000 * 60 * 60 * 24);
-    return days;
-}
-console.log(daysUnitNewYear() + " days until New Year.");
-//Question N0 99...
-function getNextBirthday(month, day) {
-    const today = new Date();
-    let year = today.getFullYear();
-    const birthDay = new Date(year, month - 1, day);
-    if (birthDay < today) {
-        birthDay.setFullYear(year + 1);
-    }
-    return birthDay;
-}
-const nextBirthDay = getNextBirthday(12, 25);
-console.log("Next birthDay on : ", nextBirthDay.toLocaleDateString());
-// Day 34..
-//Question No 100...
-//using Math.sqrt()
-const squareRoot = Math.sqrt(144);
-console.log(squareRoot);
-//Question No 101...
-function getRandomInt() {
-    return Math.floor(Math.random() * 10) + 1;
-}
-console.log(getRandomInt());
-//Question No 102...
-const difference = Math.abs(-5 - 5);
-console.log(difference);
-//Day 35...
-//Question No 103..
-function getRandomBoolean() {
-    return Math.random() > 0.5;
-}
-console.log(getRandomBoolean());
-//Question No 104...
-function getRandomHexColor() {
-    const color = '#' + Math.floor(Math.random() * 0xFFFFFF).toString(16).padStart(6, '0');
-    return color;
-}
-console.log(getRandomHexColor());
-//Question No 105...
-function rollDice() {
-    return Math.floor(Math.random() * 6) + 1;
-}
-console.log(rollDice());
-//Day 36...
-//Question No 106...
-function isLeapYear(year) {
-    return (year % 4 === 0 && year % 100 !== 0) || year % 400 === 0;
-}
-console.log(isLeapYear(2020));
-console.log(isLeapYear(1900));
-//Question No 107...
-function isDivisibleByTwoAndThree(number) {
-    return number % 2 === 0 && number % 3 === 0;
-}
-console.log(isDivisibleByTwoAndThree(12));
-console.log(isDivisibleByTwoAndThree(14));
-//Question No 108..
-function areStringsEqualIgnoreCase(str1, str2) {
-    return str1.toLowerCase() === str2.toLowerCase();
-}
-console.log(areStringsEqualIgnoreCase("hello ", "Hello"));
-console.log(areStringsEqualIgnoreCase("world ", "Word"));
-//Question No 109...
-const currentTime = new Date();
-if (currentTime.getHours() < 12) {
-    console.log("Good Morning");
-}
-//Question No 110...
-function assignGrade(score) {
-    if (score >= 90) {
-        return "A";
-    }
-    else if (score >= 80) {
-        return "B";
-    }
-    else if (score >= 70) {
-        return "C";
-    }
-    else if (score >= 60) {
-        return "D";
-    }
-    else {
-        return "F";
+//100 Days _coding_Challenge..
+//Day 39...
+//Question No 115..
+function logDayofWeek(dayNumber) {
+    switch (dayNumber) {
+        case 1:
+            console.log("Sunday");
+            break;
+        case 2:
+            console.log("Monday");
+            break;
+        case 3:
+            console.log("Tuesday");
+            break;
+        case 4:
+            console.log("Wednesday");
+            break;
+        case 5:
+            console.log("Thursday");
+            break;
+        case 6:
+            console.log("Friday");
+            break;
+        case 1:
+            console.log("Saturday");
+            break;
+        default:
+            console.log("Invalid Day Number");
+            break;
     }
 }
-console.log(assignGrade(85));
-console.log(assignGrade(55));
-//Question No 111...
-function categorizedAge(age) {
-    if (age < 13) {
-        return "child";
-    }
-    else if (age <= 19) {
-        return "teenager";
-    }
-    else {
-        return "adult";
-    }
-}
-console.log(categorizedAge(12));
-console.log(categorizedAge(18));
-console.log(categorizedAge(25));
-//Day 38...
-//Question No 112...
-const countries = new Map();
-countries.set("USA", "Washington,D.C .");
-countries.set("France", "Paris .");
-countries.set("Japan", "Tokyo.");
-console.log(countries);
-//Question No 113...
-function logCapitalofCanada(countries) {
-    if (countries.has("Canada")) {
-        console.log("This capital of Canada is " + countries.get + "Canada");
-    }
-    else {
-        console.log("Canada is not in the Map.");
+logDayofWeek(3);
+//Question No 116...
+function logSeason(month) {
+    switch (month) {
+        case 12:
+        case 1:
+        case 2:
+            console.log("Winter");
+            break;
+        case 3:
+        case 4:
+        case 5:
+            console.log("Spring");
+            break;
+        case 6:
+        case 7:
+        case 8:
+            console.log("Summer");
+            break;
+        case 9:
+        case 10:
+        case 11:
+            console.log("Fall");
+            break;
+        default:
+            console.log("Invalid Month");
+            break;
     }
 }
-logCapitalofCanada(countries);
-//Question No 114...
-const students = new Map();
-students.set(1, "Alice");
-students.set(2, "Bob");
-students.set(3, "Charlie");
-students.forEach((name, id) => {
-    console.log(" Student ID : " + id + " : Name : " + name);
-});
+logSeason(4);
+//Question No 117...
+function evaluateGrade(grade) {
+    switch (grade) {
+        case "A":
+            console.log("Excellent");
+            break;
+        case "B":
+            console.log("Good");
+            break;
+        case "C":
+            console.log("Fair");
+            break;
+        case "D":
+            console.log("Poor");
+            break;
+        case "F":
+            console.log("Fail");
+        default:
+            console.log("Invalid Grade");
+            break;
+    }
+}
+evaluateGrade("B");
+//Day 40..
+//Question No 118...
+for (let i = 1; i <= 10; i++) {
+    console.log(i);
+}
+//Question No 119...
+let count = 0;
+while (count < 5) {
+    console.log("Hello World");
+    count++;
+}
+//Question No 120...
+const favoriteMovies = [
+    "Inception",
+    "The Matrix",
+    "Intersteller",
+    "The Prestige",
+];
+for (const movie of favoriteMovies) {
+    console.log(movie);
+}
+//Day 41...
+//Question No 121...
+for (let i = 1; i <= 10; i++) {
+    if (i === 5) {
+        continue;
+    }
+    console.log(i);
+}
+//Question No 122..
+let counter = 10;
+while (counter > 0) {
+    if (counter === 5) {
+        break;
+    }
+    console.log(counter);
+    counter--;
+}
+//Question No 123...
+function logUnitVowel(str) {
+    const vowels = "aeiouAEIOU";
+    for (const char of str) {
+        if (vowels.includes(char)) {
+            console.log("First Vowel Found : " + char);
+            break;
+        }
+        console.log(char);
+    }
+}
+logUnitVowel("syzygy");
+//Day No 42...
+//Question No 124...
+const person = {
+    name: "Alice",
+    getName: function () {
+        return this.name;
+    },
+};
+console.log(person.getName());
+//Question No 125...
+const rectangle = {
+    length: 4,
+    width: 5,
+    calculateArea: function () {
+        return this.length * this.width;
+    },
+};
+console.log(rectangle.calculateArea());
+//Question No 126...
+const myObject = {
+    property: "Value",
+    outerMethod: function () {
+        console.log(this.property);
+        const innerMethod = () => {
+            console.log(this.property);
+        };
+        innerMethod();
+    },
+};
+myObject.outerMethod();
